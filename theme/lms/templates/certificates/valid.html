@@ -229,22 +229,30 @@ width: 100% !important;
 	</div>
 	<div class="certificate-wrapper" style="background-image: url('https://sleepingspace.ams3.digitaloceanspaces.com/certback.png');>
 			
-            <p></p>
-            <header class="container w-50 pt-3 text-cemter" Style="text-align: center;">
-            <p></p>
-            <p></p>
-            <h1 style="text-align: center;" class="display-4 align-self-center gy-5 mt-5 mb-5 pt-5 pb-5">CERTIFICATE OF COMPLETION</h1>
+         
+			<p></p>
+            
+            <header class="container w-50 mt-5 pt-3 text-cemter" Style="text-align: center;">
+			  <p></p>
+			<p></p>                      
 		</header>
 		<main class="bg-transparent container rounded rounded-3 border-white w-90 mt-5 pt-5">
-                        <div style="text-align: center; max-width: 1280px; margin: auto; align-self: center;" class="bg-white text-center rounded-3 ">
+
+<div style="text-align: center; max-width: 1280px; margin: auto; align-self: center;" class="bg-white text-center rounded-3 ">
+                        
 			
  <p style="text-align: center;max-width: 900px;margin: auto;">
-     
+     <h1 style="text-align: center;" class="display-4 align-self-center bg-white m-5 font-family: Calibri bold ">CERTIFICATE OF COMPLETION</h1>
 <strong>Awarded to: ${accomplishment_copy_name}</strong> <br>
-<span style="font-size: large;">For the completion of the Safer Sleep for Babies training <strong>${accomplishment_copy_course_name}</strong></span>
+<span style="font-size: large;">For the completion of the <strong>${accomplishment_copy_course_name}</strong></span>
     </p>
+		<div> 
+			 <div class="bg-transparent col-6">
+                                        <img src="https://sleepingspace.ams3.digitaloceanspaces.com/logo.png" width="200">
+                                        </div>
+
                       	% if certificate_data:
-			<div class="signatures">
+			<div class="signatures col-6">
 				% for signatory in certificate_data.get('signatories', []):
 					% if signatory.get('signature_image_path'):
 				<div class="signature">
@@ -256,31 +264,17 @@ width: 100% !important;
 				% endfor
 			</div>
 			% endif
-<div class="container bg-transparent">
+
                                 <div class="container bg-transparent">
                                 <div class="row bg-transparent align-items-center">
                                    
-                                    <div class="bg-transparent col-3">
-<img src="https://sleepingspace.ams3.digitaloceanspaces.com/NHS_Logo_ds.jpg" width="75">
+                                    <div class="bg-transparent col-12 text-center">
+										<span style="font-size: 12px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;"> Lullaby Trust, CAN Mezzanine, 7-14 Great Dover Street, London SE1 4YR</span>
+										<br>
+										<span style="color:#0000FF; font-size: 9px;"> Registered charity no. 262191</span>
+									</div>
+                                                                   </div>
 </div>
-                                    <div class="bg-transparent col-3">
-<img src="https://sleepingspace.ams3.digitaloceanspaces.com/scot_gov.jpg" width="150">
-</div>
-                     <div class="bg-transparent col-3">
-                                        <img src="https://sleepingspace.ams3.digitaloceanspaces.com/trust.png" width="200">
-                                        </div>
-                                    <div class="bg-transparent col-3">
-<img src="https://sleepingspace.ams3.digitaloceanspaces.com/basis.png" width="100">
-</div>
-                                </div>
-<div class="row bg-transparent small text-center">
-<div class="col"></div>      &nbsp;</div>
-                            <div class="row bg-transparent text-center fst-italic small"><div class="col"></div>&nbsp;</div>
-                                   </div>
-</div>
-
-		</main>
-
 
 		<footer style="width: 100% !important;height: auto;margin-bottom: 0px !important;margin: 0 auto !important;text-align: center;display: block;">
 		

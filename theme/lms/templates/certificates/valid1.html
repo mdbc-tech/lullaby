@@ -11,6 +11,7 @@ course_mode_class = course_mode if course_mode else ''
 	<head dir="${dir_rtl}">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta charset="utf-8">
+         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>${document_title}</title>
 	<style>
@@ -24,8 +25,8 @@ course_mode_class = course_mode if course_mode else ''
 		}
 		body {
 			color:#000000;
-font-family: Roboto Condensed !important;
-			font-size:18px;
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif Condensed !important;
+			font-size:24px;
 		}
 		div.system-banner-wrapper {
 			-webkit-font-smoothing: antialiased;
@@ -103,7 +104,7 @@ padding: 5px 17px;
 text-align: center;
 color: #15457b !important;
 font-weight: bold;
-font-size: 19px;
+font-size: 36px;
 margin-top: 0px;
 		}
 		div.certificate-wrapper > main > div.course-name,
@@ -127,7 +128,7 @@ margin-top: 0px;
 			height:100%;
 		}
 		div.certificate-wrapper > main > div.accomplishment-details {
-			font-size:14px;
+			font-size: 16px;
 			line-height:1.3;
 			position:relative;
 			text-align:center;
@@ -139,17 +140,9 @@ margin-top: 0px;
 			position:relative;
 			text-align:center;
 		}
-        div.certificate-wrapper > main > div.accomplishment-details > span.course-title {
-			display:block;
-            font-size: x-large;
-			font-weight:bold;
-			margin:10px 0;
-			position:relative;
-			text-align:center;
-		}
 		div.certificate-wrapper > main > div.certificate-date {
 			display:block;
-			font-size:14px;
+			font-size:12px;
 			line-height:1.3;
 			margin-top:10px;
 			position:relative;
@@ -180,14 +173,14 @@ padding: 10px;
 		}
 		div.certificate-wrapper div.signatures div.signature > span {
 			display:block;
-			font-size:10px;
+			font-size:12px;
 			text-align:center;
 			width:100%;
 		}
 		div.certificate-wrapper footer {
 			bottom: 0;
 display: block;
-font-size: 10px;
+font-size: 16px;
 left: 0;
 padding: 0px !important;
 position: absolute;
@@ -225,7 +218,7 @@ width: 100% !important;
 <body>
 	<div class="system-banner-wrapper">
 		<div>
-			<h2>${accomplishment_copy_username} ${accomplishment_banner_opening}</h2>
+			<h2>${accomplishment_banner_opening}</h2>
 			<p class="message-copy copy copy-base emphasized"> ${accomplishment_banner_congrats}</p>
 			<div class="message-actions">
 				<button class="inverse" id="action-print-view">
@@ -234,52 +227,59 @@ width: 100% !important;
 			</div>
 		</div>
 	</div>
-	<div class="certificate-wrapper">
-		<header>
-<img src="https://openlearn.dcad.tech/static/basis/images/logo.967a7b8ef5fd.png" style="width: 50%;height: auto;margin-bottom: 0px !important;margin: 0 auto;text-align: center;display: block;">
-
-		</header>
-		<main>
-			<h1>Training Certificate</h1>
- <p style="text-align: center;max-width: 900px;margin: auto;">
-     
-This is to certify that 
- <span> 
-</br> 
-    <strong>${accomplishment_copy_username}</strong> </span> 
-</br>
-  Has successfully completed online training in: <br>
-				<span class="course-title">${accomplishment_copy_course_name}</span>
+	<div class="certificate-wrapper" style="background-image: url('https://sleepingspace.ams3.digitaloceanspaces.com/certback.png');>
 			
-<br>
-<span>and is hereby awarded </span>
-    <br>
-    <span class="course-name"><strong> Certificate of Completion </strong> </span>
+         
+			<p></p>
+            
+            <header class="container w-50 mt-5 pt-3 text-cemter" Style="text-align: center;">
+			  <p></p>
+			<p></p>                      
+		</header>
+		<main class="bg-transparent container rounded rounded-3 border-white w-90 mt-5 pt-5">
 
-<br>
-    <span>Delivered by</span> <br>
-        <span class="course-name"> <h1> The Baby Infant Sleep Information Source BASIS</h1></span>
-</p>
+<div style="text-align: center; max-width: 1280px; margin: auto; align-self: center;" class="bg-white text-center rounded-3 ">
+                        
+			
+ <p style="text-align: center;max-width: 900px;margin: auto;">
+     <h1 style="text-align: center;" class="display-4 align-self-center bg-white m-5 font-family: Calibri bold ">CERTIFICATE OF COMPLETION</h1>
+<strong>Awarded to: ${accomplishment_copy_name}</strong> <br>
+<span style="font-size: large;">For the completion of the <strong>${accomplishment_copy_course_name}</strong></span>
+    </p>
+		<div> 
+			 <div class="bg-transparent col-6">
+                                        <img src="https://sleepingspace.ams3.digitaloceanspaces.com/logo.png" width="200">
+                                        </div>
 
-			% if certificate_data:
-			<div class="certificate-date">${certificate_date_issued}</div>
-			<div class="signatures">
+                      	% if certificate_data:
+			<div class="signatures col-6">
 				% for signatory in certificate_data.get('signatories', []):
 					% if signatory.get('signature_image_path'):
 				<div class="signature">
-					<img src="${static.url(signatory['signature_image_path'])}" alt="${signatory['name']}" />
-					<span class="signature-name">${signatory['name']}</span>
-					<span class="signature-role">${signatory['title']}</span>
-					<span class="signature-organization">${signatory['organization']}</span>
+					<span><img src="${static.url(signatory['signature_image_path'])}" alt="${signatory['name']}" class="bg-transparent" width="100px" height="75px"/> </span>
+				<span class="signature-name" style="font-size: medium;">${signatory['name']}, ${signatory['title']}</span>
+				<span class="signature-organization">${signatory['organization']}</span>
 				</div>
 					% endif
 				% endfor
 			</div>
 			% endif
-		</main>
+
+                                <div class="container bg-transparent">
+                                <div class="row bg-transparent align-items-center">
+                                   
+                                    <div class="bg-transparent col-12 text-center">
+										<span style="font-size: 12px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;"> Lullaby Trust, CAN Mezzanine, 7-14 Great Dover Street, London SE1 4YR</span>
+										<br>
+										<span style="color:#0000FF; font-size: 9px;"> Registered charity no. 262191</span>
+									</div>
+                                                                   </div>
+</div>
+
 		<footer style="width: 100% !important;height: auto;margin-bottom: 0px !important;margin: 0 auto !important;text-align: center;display: block;">
-		<img src="https://openlearn.dcad.tech/static/basis/images/logo.967a7b8ef5fd.png" style="width: 10%;height: auto;margin-bottom: 0px !important;margin: 0 auto;text-align: center;display: block;">
+		
 				</footer>
 		
 </body>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </html>
