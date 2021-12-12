@@ -246,13 +246,13 @@ width: 100% !important;
 <strong>Awarded to: ${accomplishment_copy_name}</strong> <br>
 <span style="font-size: large;">For the completion of the <strong>${accomplishment_copy_course_name}</strong></span>
     </p>
-		<div> 
+		<div class="row"> 
 			 <div class="bg-transparent col-6">
                                         <img src="https://sleepingspace.ams3.digitaloceanspaces.com/logo.png" width="200">
                                         </div>
-
+						<div class="col-6">				
                       	% if certificate_data:
-			<div class="signatures col-3">
+			<div class="signatures">
 				% for signatory in certificate_data.get('signatories', []):
 					% if signatory.get('signature_image_path'):
 				<div class="signature">
@@ -264,6 +264,8 @@ width: 100% !important;
 				% endfor
 			</div>
 			% endif
+		</div>
+			</div>
 
                                 <div class="container bg-transparent">
                                 <div class="row bg-transparent align-items-center">
